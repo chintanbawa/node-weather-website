@@ -17,8 +17,8 @@ form.addEventListener('submit', (e) => {
         response.json().then((data) => {
             if (data.err) return messageOne.textContent = data.err
 
-            messageOne.textContent = data.location
-            messageTwo.textContent = data.forecast
+            messageOne.textContent = 'I am in ' + data.location + '.'
+            messageTwo.textContent = 'Currently, temperature is ' + data.temperature + ', but min temperature is ' + data.temperatureMin + ' and max temperature is ' + data.temperatureMax + '.'
 
         })
     }).catch((err) => {
